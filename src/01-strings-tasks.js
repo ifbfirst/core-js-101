@@ -66,9 +66,8 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-  value.replace('Hello, ', '');
-  value.replace('!', '');
-  return value;
+  const res = value.replace('Hello, ', '').replace('!', '');
+  return res;
 }
 
 
@@ -98,8 +97,15 @@ function getFirstChar(value) {
  *   '\tHello, World! ' => 'Hello, World!'
  */
 function removeLeadingAndTrailingWhitespaces(value) {
-  if (value[0] === ' ' || value === '\t') { value.slice(1); }
-  return value;
+  let res1 = '';
+  let res2 = '';
+  if (value[0] === ' ' || value[0] === '\t') {
+    res1 = value.slice(1);
+  }
+  if (res1[res1.length - 1] === ' ' || res1[res1.length - 1] === '\t') {
+    res2 = res1.slice(0, res1.length - 1);
+  }
+  return res2;
 }
 
 /**
@@ -133,8 +139,9 @@ function repeatString(value, count) {
  *   'I like legends', 'end' => 'I like legs',
  *   'ABABAB','BA' => 'ABAB'
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeFirstOccurrences(str, value) {
+  const res = str.replace(value, '');
+  return res;
 }
 
 /**
@@ -148,8 +155,10 @@ function removeFirstOccurrences(/* str, value */) {
  *   '<span>' => 'span'
  *   '<a>' => 'a'
  */
-function unbracketTag(/* str */) {
-  throw new Error('Not implemented');
+function unbracketTag(str) {
+  const res = str.replace('>', '').replace('<', '');
+
+  return res;
 }
 
 
@@ -163,8 +172,9 @@ function unbracketTag(/* str */) {
  *   'Thunderstruck' => 'THUNDERSTRUCK'
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
-function convertToUpperCase(/* str */) {
-  throw new Error('Not implemented');
+function convertToUpperCase(str) {
+  const res = str.toUpperCase();
+  return res;
 }
 
 /**
@@ -182,8 +192,9 @@ function convertToUpperCase(/* str */) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-  throw new Error('Not implemented');
+function extractEmails(str) {
+  const res = str.split(';');
+  return res;
 }
 
 /**
