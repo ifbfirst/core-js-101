@@ -21,12 +21,7 @@
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
 function findElement(arr, value) {
-  let res;
-  arr.forEach((valueArr, index) => {
-    if (valueArr === value) {
-      res = index;
-    } else { res = -1; }
-  });
+  const res = arr.findIndex((item) => item === value);
   return res;
 }
 
