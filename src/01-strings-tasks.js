@@ -258,8 +258,19 @@ function encodeToRot13(/* str */) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+
+
+function isString(value) {
+  let res;
+  const preStr = value;
+
+  const str = preStr.valueOf();
+  if (typeof str === 'string') {
+    res = true;
+  } else {
+    res = false;
+  }
+  return res;
 }
 
 
