@@ -37,7 +37,8 @@ function findElement(arr, value) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds() {
+function generateOdds(/* n */) {
+
 
 }
 
@@ -215,7 +216,7 @@ function getTail(arr, n) {
  *    +'30,31,32,33,34'
  */
 function toCsvText(/* arr */) {
-  throw new Error('Not implemented');
+
 }
 
 /**
@@ -324,8 +325,10 @@ function get3TopItems(arr) {
  *   [ null, 1, 'elephant' ] => 1
  *   [ 1, '2' ] => 1
  */
-function getPositivesCount(/* arr */) {
-  throw new Error('Not implemented');
+function getPositivesCount(arr) {
+  const newArr = arr.filter((item) => typeof item === 'number' && item > 0);
+  const res = newArr.length;
+  return res;
 }
 
 /**
