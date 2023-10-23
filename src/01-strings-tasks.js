@@ -101,9 +101,10 @@ function removeLeadingAndTrailingWhitespaces(value) {
   let res2 = '';
   if (value[0] === ' ' || value[0] === '\t') {
     res1 = value.slice(1);
-  }
-  if (res1[res1.length - 1] === ' ' || res1[res1.length - 1] === '\t') {
-    res2 = res1.slice(0, res1.length - 1);
+
+    if (res1[res1.length - 1] === ' ' || res1[res1.length - 1] === '\t') {
+      res2 = res1.slice(0, res1.length - 1);
+    }
   }
   return res2;
 }
@@ -263,7 +264,6 @@ function encodeToRot13(/* str */) {
 function isString(value) {
   let res;
   const preStr = value;
-
   const str = preStr.valueOf();
   if (typeof str === 'string') {
     res = true;
@@ -298,8 +298,17 @@ function isString(value) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {
-  throw new Error('Not implemented');
+function getCardId(value) {
+  const str = `'A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣',
+  'A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦',
+   'A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥',
+    'A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠' `;
+  let a;
+  for (let i = 0; i < str.length; i += 1) {
+    if (str[i] === value) {
+      a = i;
+    }
+  } return a;
 }
 
 
