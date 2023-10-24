@@ -37,9 +37,12 @@ function findElement(arr, value) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* n */) {
-
-
+function generateOdds(count) {
+  function iter(n, current, arr) {
+    if (n === count) return arr;
+    return iter(n + 1, current + 2, arr.concat(current));
+  }
+  return iter(0, 1, []);
 }
 
 
@@ -108,9 +111,9 @@ function getArrayOfStrings(arr) {
  *    [ 1, 2, 3, 4, 5, 'false' ]         => [ 1, 2, 3, 4, 5, 'false' ]
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
-function removeFalsyValues(/* arr */) {
-
-
+function removeFalsyValues(arr) {
+  const result = arr.filter(Boolean);
+  return result;
 }
 
 /**

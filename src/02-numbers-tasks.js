@@ -55,8 +55,12 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
+  let res;
   const avr = Math.round(value1 + value2) / 2;
-  return avr;
+  if (avr === Infinity) {
+    res = 1.7976931348623157e+308;
+  } else { res = avr; }
+  return res;
 }
 
 /**
