@@ -184,8 +184,17 @@ function isInsideCircle(/* circle, point */) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(/* str */) {
-  throw new Error('Not implemented');
+function findFirstSingleChar(str) {
+  let res;
+  for (let i = 0; i < str.length; i += 1) {
+    for (let a = 0; a < str.length; a += 1) {
+      if (str[i] !== str[a]) {
+        res = str[i];
+        break;
+      } else { res = null; }
+    }
+  }
+  return res;
 }
 
 
@@ -228,8 +237,12 @@ function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
  * 'rotator' => 'rotator'
  * 'noon' => 'noon'
  */
-function reverseString(/* str */) {
-  throw new Error('Not implemented');
+function reverseString(str) {
+  let res = '';
+  for (let i = 0; i < str.length; i += 1) {
+    res = `${str[i]}${res}`;
+  }
+  return res;
 }
 
 
@@ -245,8 +258,14 @@ function reverseString(/* str */) {
  *   87354 => 45378
  *   34143 => 34143
  */
-function reverseInteger(/* num */) {
-  throw new Error('Not implemented');
+function reverseInteger(num) {
+  let res = '';
+  const str = String(num);
+
+  for (let i = 0; i < str.length; i += 1) {
+    res = `${str[i]}${res}`;
+  }
+  return Number(res);
 }
 
 
@@ -288,8 +307,9 @@ function isCreditCardNumber(/* ccn */) {
  *   10000 ( 1+0+0+0+0 = 1 ) => 1
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
-function getDigitalRoot(/* num */) {
-  throw new Error('Not implemented');
+function getDigitalRoot(num) {
+
+
 }
 
 
