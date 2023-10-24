@@ -307,7 +307,22 @@ function isCreditCardNumber(/* ccn */) {
  *   10000 ( 1+0+0+0+0 = 1 ) => 1
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
-function getDigitalRoot(/* num */) {
+function getDigitalRoot(num) {
+  let res;
+  const arr = Array.from(String(num), Number);
+
+  const s = arr.reduce((sum, current) => sum + current, 0);
+
+  if (s <= 9) {
+    res = s;
+  } else {
+    const arr2 = Array.from(String(s), Number);
+
+    const s2 = arr2.reduce((sum, current) => sum + current, 0);
+    res = s2;
+  }
+
+  return res;
 }
 
 
@@ -333,7 +348,6 @@ function getDigitalRoot(/* num */) {
  *   '{[(<{[]}>)]}' = true
  */
 function isBracketsBalanced(/* str */) {
-  throw new Error('Not implemented');
 }
 
 
